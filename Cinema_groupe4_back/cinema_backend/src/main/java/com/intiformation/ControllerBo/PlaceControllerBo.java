@@ -22,6 +22,7 @@ public class PlaceControllerBo {
 
 	@Autowired
 	private PlaceService placeService;
+	@Autowired
 	private PlaceMapper placeMapper;
 	
 	@GetMapping("/{id}")

@@ -22,6 +22,7 @@ public class FilmControllerBo {
 
 	@Autowired
 	private FilmService filmService;
+	@Autowired
 	private FilmMapper filmMapper;
 	
 	@GetMapping("/{id}")

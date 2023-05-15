@@ -1,8 +1,11 @@
 package com.intiformation.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.intiformation.businessObject.SalleBo;
 import com.intiformation.modele.Salle;
 
+@Component
 public class SalleMapper {
 	
 	public SalleBo salleToSalleBo(Salle salle) {

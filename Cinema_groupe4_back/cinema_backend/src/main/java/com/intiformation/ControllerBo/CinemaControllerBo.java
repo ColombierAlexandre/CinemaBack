@@ -22,6 +22,7 @@ public class CinemaControllerBo {
 
 	@Autowired
 	private CinemaService cinemaService;
+	@Autowired
 	private CinemaMapper cinemaMapper;
 
 	@GetMapping("/{id}")

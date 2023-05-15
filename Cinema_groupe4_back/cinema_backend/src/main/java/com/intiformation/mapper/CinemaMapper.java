@@ -1,8 +1,11 @@
 package com.intiformation.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.intiformation.businessObject.CinemaBo;
 import com.intiformation.modele.Cinema;
 
+@Component
 public class CinemaMapper {
 	
 	public CinemaBo cinemaToCinemaBo(Cinema cinema) {

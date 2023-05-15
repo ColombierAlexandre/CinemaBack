@@ -1,8 +1,11 @@
 package com.intiformation.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.intiformation.businessObject.FilmBo;
 import com.intiformation.modele.Film;
 
+@Component
 public class FilmMapper {
 
 	public FilmBo filmToFilmBo(Film film) {

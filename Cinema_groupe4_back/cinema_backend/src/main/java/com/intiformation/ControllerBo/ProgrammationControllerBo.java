@@ -26,6 +26,7 @@ public class ProgrammationControllerBo {
 
 	@Autowired
 	ProgrammationService programmationService;
+	@Autowired
 	ProgrammationMapper programmationMapper;
 
 	@GetMapping("/{id}")

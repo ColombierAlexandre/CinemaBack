@@ -26,6 +26,7 @@ public class UtilisateurControllerBo {
 	
 	@Autowired
 	private UtilisateurService utilisateurService;
+	@Autowired
 	private UtilisateurMapper utilisateurMapper;
 	
 	@PostMapping

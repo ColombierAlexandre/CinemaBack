@@ -1,12 +1,14 @@
 package com.intiformation.mapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.intiformation.businessObject.ProgrammationBo;
 import com.intiformation.modele.Place;
 import com.intiformation.modele.Programmation;
 import com.intiformation.service.PlaceService;
 
+@Component
 public class ProgrammationMapper {
 
 	private PlaceService placeService;

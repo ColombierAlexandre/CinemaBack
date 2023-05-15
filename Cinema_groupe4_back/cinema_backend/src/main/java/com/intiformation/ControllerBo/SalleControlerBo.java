@@ -22,6 +22,7 @@ public class SalleControlerBo {
 
 	@Autowired
 	private SalleService salleService;
+	@Autowired
 	private SalleMapper salleMapper;
 	
 	@GetMapping("/salle")

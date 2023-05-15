@@ -1,8 +1,11 @@
 package com.intiformation.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.intiformation.businessObject.UtilisateurBo;
 import com.intiformation.modele.Utilisateur;
 
+@Component
 public class UtilisateurMapper {
 	
 	public UtilisateurBo utilisateurToUtilisateurBo(Utilisateur utilisateur) {

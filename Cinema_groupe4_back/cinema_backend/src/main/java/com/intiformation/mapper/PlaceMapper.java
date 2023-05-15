@@ -1,8 +1,11 @@
 package com.intiformation.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.intiformation.businessObject.PlaceBo;
 import com.intiformation.modele.Place;
 
+@Component
 public class PlaceMapper {
 	
 	public PlaceBo placeToPlaceBo(Place place) {

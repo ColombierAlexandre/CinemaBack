@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Film {
@@ -24,9 +25,13 @@ public class Film {
 	private List<String> acteurs;
 	private Date dateDeSortie;
 	private String afficheUrl;
+	
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "Caracteristiques_join_Film", joinColumns = @JoinColumn(name = "IdFilm"), inverseJoinColumns = @JoinColumn(name = "IdCarac"))
 	private List<Caracteristiques> listeCaracteristiques;
+	
+	@OneToMany(mappedBy = "film", targetEntity = Programmation.class, cascade = CascadeType.ALL)
+	private List<Programmation> listeProgrammations;
 
 	public Film() {
 	}

@@ -13,7 +13,7 @@ public class FilmBo {
 	private String realisateur;
 	private Time duree;
 	private String producteur;
-	private String[] acteurs;
+	private List<String> acteurs;
 	private Date dateDeSortie;
 	private List<Caracteristiques> listeCaracteristiques;
 	
@@ -21,7 +21,7 @@ public class FilmBo {
 		super();
 	}
 
-	public FilmBo(String titre, String realisateur, Time duree, String producteur, String[] acteurs, Date dateDeSortie,
+	public FilmBo(String titre, String realisateur, Time duree, String producteur, List<String> acteurs, Date dateDeSortie,
 			List<Caracteristiques> listeCaracteristiques) {
 		super();
 		this.titre = titre;
@@ -34,7 +34,7 @@ public class FilmBo {
 	}
 
 	public FilmBo(int visaExploitation, String titre, String realisateur, Time duree, String producteur,
-			String[] acteurs, Date dateDeSortie, List<Caracteristiques> listeCaracteristiques) {
+			List<String> acteurs, Date dateDeSortie, List<Caracteristiques> listeCaracteristiques) {
 		super();
 		this.visaExploitation = visaExploitation;
 		this.titre = titre;
@@ -86,11 +86,11 @@ public class FilmBo {
 		this.producteur = producteur;
 	}
 
-	public String[] getActeurs() {
+	public List<String> getActeurs() {
 		return acteurs;
 	}
 
-	public void setActeurs(String[] acteurs) {
+	public void setActeurs(List<String> acteurs) {
 		this.acteurs = acteurs;
 	}
 

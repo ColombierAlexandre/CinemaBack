@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.intiformation.businessObject.ProgrammationBo;
 import com.intiformation.mapper.ProgrammationMapper;
+import com.intiformation.modele.Cinema;
 import com.intiformation.modele.Film;
 import com.intiformation.modele.Programmation;
 import com.intiformation.service.ProgrammationService;
@@ -38,6 +39,15 @@ public class ProgrammationControllerBo {
 	public List<ProgrammationBo> getAllProgrammationByFilm(@RequestBody Film film) {
 		List<ProgrammationBo> listeProgrammationBo = new ArrayList<>();
 		for (Programmation programmation : programmationService.getAllProgrammationByFilm(film)) {
+			listeProgrammationBo.add(programmationMapper.programmationToProgrammationBo(programmation));
+		}
+		return listeProgrammationBo;
+	}
+	
+	@GetMapping("/getAllByFilmCine")
+	public List<ProgrammationBo> getAllProgrammationByFilmAndCinema(@RequestBody Film film,@RequestBody Cinema cinema) {
+		List<ProgrammationBo> listeProgrammationBo = new ArrayList<>();
+		for (Programmation programmation : programmationService.getAllProgrammationByFilmAndCinema(film, cinema)) {
 			listeProgrammationBo.add(programmationMapper.programmationToProgrammationBo(programmation));
 		}
 		return listeProgrammationBo;

@@ -18,7 +18,6 @@ public class Film {
 	@Id
 	private int visaExploitation;
 	private String titre;
-	private String synopsis;
 	private Time duree;
 	private String realisateur;
 	private String producteur;
@@ -30,18 +29,15 @@ public class Film {
 	@JoinTable(name = "Caracteristiques_join_Film", joinColumns = @JoinColumn(name = "IdFilm"), inverseJoinColumns = @JoinColumn(name = "IdCarac"))
 	private List<Caracteristiques> listeCaracteristiques;
 	
-	@OneToMany(mappedBy = "film", targetEntity = Programmation.class, cascade = CascadeType.ALL)
-	private List<Programmation> listeProgrammations;
 
 	public Film() {
 	}
 
-	public Film(int visaExploitation, String titre, String synopsis, Time duree, String realisateur, String producteur,
+	public Film(int visaExploitation, String titre, Time duree, String realisateur, String producteur,
 			List<String> acteurs, Date dateDeSortie, String afficheUrl, List<Caracteristiques> listeCaracteristiques) {
 		super();
 		this.visaExploitation = visaExploitation;
 		this.titre = titre;
-		this.synopsis = synopsis;
 		this.duree = duree;
 		this.realisateur = realisateur;
 		this.producteur = producteur;
@@ -67,13 +63,6 @@ public class Film {
 		this.titre = titre;
 	}
 
-	public String getSynopsis() {
-		return synopsis;
-	}
-
-	public void setSynopsis(String synopsis) {
-		this.synopsis = synopsis;
-	}
 
 	public Time getDuree() {
 		return duree;

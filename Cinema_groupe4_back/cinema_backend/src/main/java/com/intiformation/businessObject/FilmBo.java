@@ -16,13 +16,22 @@ public class FilmBo {
 	private List<String> acteurs;
 	private Date dateDeSortie;
 	private List<Caracteristiques> listeCaracteristiques;
+	private String afficheUrl;
 	
+	public String getAfficheUrl() {
+		return afficheUrl;
+	}
+
+	public void setAfficheUrl(String afficheUrl) {
+		this.afficheUrl = afficheUrl;
+	}
+
 	public FilmBo() {
 		super();
 	}
 
-	public FilmBo(String titre, String realisateur, Time duree, String producteur, List<String> acteurs, Date dateDeSortie,
-			List<Caracteristiques> listeCaracteristiques) {
+	public FilmBo(String titre, String realisateur, Time duree, String producteur, List<String> acteurs, String afficheUrl, 
+			Date dateDeSortie, List<Caracteristiques> listeCaracteristiques) {
 		super();
 		this.titre = titre;
 		this.realisateur = realisateur;
@@ -30,10 +39,11 @@ public class FilmBo {
 		this.producteur = producteur;
 		this.acteurs = acteurs;
 		this.dateDeSortie = dateDeSortie;
+		this.afficheUrl = afficheUrl;
 		this.listeCaracteristiques = listeCaracteristiques;
 	}
 
-	public FilmBo(int visaExploitation, String titre, String realisateur, Time duree, String producteur,
+	public FilmBo(int visaExploitation, String titre, String realisateur, Time duree, String producteur, String afficheUrl,
 			List<String> acteurs, Date dateDeSortie, List<Caracteristiques> listeCaracteristiques) {
 		super();
 		this.visaExploitation = visaExploitation;
@@ -43,6 +53,7 @@ public class FilmBo {
 		this.producteur = producteur;
 		this.acteurs = acteurs;
 		this.dateDeSortie = dateDeSortie;
+		this.afficheUrl = afficheUrl;
 		this.listeCaracteristiques = listeCaracteristiques;
 	}
 

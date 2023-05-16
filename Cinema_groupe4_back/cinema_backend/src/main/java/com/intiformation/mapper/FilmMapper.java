@@ -18,6 +18,7 @@ public class FilmMapper {
 		filmBo.setActeurs(film.getActeurs());
 		filmBo.setDateDeSortie(film.getDateDeSortie());
 		filmBo.setListeCaracteristiques(film.getListeCaracteristiques());
+		filmBo.setAfficheUrl(film.getAfficheUrl());
 		return filmBo;
 	}
 
@@ -31,6 +32,7 @@ public class FilmMapper {
 		film.setActeurs(filmBo.getActeurs());
 		film.setDateDeSortie(filmBo.getDateDeSortie());
 		film.setListeCaracteristiques(filmBo.getListeCaracteristiques());
+		film.setAfficheUrl(filmBo.getAfficheUrl());
 		return film;
 	}
 

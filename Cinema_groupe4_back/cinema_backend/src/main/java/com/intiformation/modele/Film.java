@@ -10,33 +10,35 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Film {
 
 	@Id
 	private int visaExploitation;
-	private String titre;	
-	private String synopsis;		
-	private Time duree;		//
-	private String realisateur;		//
-	private String producteur;		//
-	private List<String> acteurs;		//
+
+	private String titre;
+	private Time duree;
+	private String realisateur;
+	private String producteur;
+	private List<String> acteurs;
 	private Date dateDeSortie;
 	private String afficheUrl;
+	
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "Caracteristiques_join_Film", joinColumns = @JoinColumn(name = "IdFilm"), inverseJoinColumns = @JoinColumn(name = "IdCarac"))
 	private List<Caracteristiques> listeCaracteristiques;
+	
 
 	public Film() {
 	}
 
-	public Film(int visaExploitation, String titre, String synopsis, Time duree, String realisateur, String producteur,
+	public Film(int visaExploitation, String titre, Time duree, String realisateur, String producteur,
 			List<String> acteurs, Date dateDeSortie, String afficheUrl, List<Caracteristiques> listeCaracteristiques) {
 		super();
 		this.visaExploitation = visaExploitation;
 		this.titre = titre;
-		this.synopsis = synopsis;
 		this.duree = duree;
 		this.realisateur = realisateur;
 		this.producteur = producteur;
@@ -60,14 +62,6 @@ public class Film {
 
 	public void setTitre(String titre) {
 		this.titre = titre;
-	}
-
-	public String getSynopsis() {
-		return synopsis;
-	}
-
-	public void setSynopsis(String synopsis) {
-		this.synopsis = synopsis;
 	}
 
 	public Time getDuree() {

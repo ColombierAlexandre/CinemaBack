@@ -23,15 +23,15 @@ public class Utilisateur {
 	private String numeroEtRue;
 	private int codePostal;
 	@Column(name = "numero_cb")
-	private Long numeroCB;
+	private long numeroCB;
 	private short criptogramme;
-	private Date dateNaissance;
+	private Date dateExpiration;
 
 	public Utilisateur() {
 	}
 
 	public Utilisateur(String email, String motDePasse, String nom, String prenom, String ville, String numeroEtRue,
-			int codePostal, Long numeroCB, short criptogramme, Date dateNaissance) {
+			int codePostal, long numeroCB, short criptogramme, Date dateExpiration) {
 		this.email = email;
 		this.motDePasse = motDePasse;
 		this.nom = nom;
@@ -41,11 +41,11 @@ public class Utilisateur {
 		this.codePostal = codePostal;
 		this.numeroCB = numeroCB;
 		this.criptogramme = criptogramme;
-		this.dateNaissance = dateNaissance;
+		this.dateExpiration = dateExpiration;
 	}
 
 	public Utilisateur(Long id, String email, String motDePasse, String nom, String prenom, String ville,
-			String numeroEtRue, int codePostal, Long numeroCB, short criptogramme, Date dateNaissance) {
+			String numeroEtRue, int codePostal, Long numeroCB, short criptogramme, Date dateExpiration) {
 		this.id = id;
 		this.email = email;
 		this.motDePasse = motDePasse;
@@ -56,7 +56,7 @@ public class Utilisateur {
 		this.codePostal = codePostal;
 		this.numeroCB = numeroCB;
 		this.criptogramme = criptogramme;
-		this.dateNaissance = dateNaissance;
+		this.dateExpiration = dateExpiration;
 	}
 
 	public Long getId() {
@@ -123,11 +123,11 @@ public class Utilisateur {
 		this.codePostal = codePostal;
 	}
 
-	public Long getNumeroCB() {
+	public long getNumeroCB() {
 		return numeroCB;
 	}
 
-	public void setNumeroCB(Long numeroCB) {
+	public void setNumeroCB(long numeroCB) {
 		this.numeroCB = numeroCB;
 	}
 
@@ -140,11 +140,11 @@ public class Utilisateur {
 	}
 
 	public Date getDateNaissance() {
-		return dateNaissance;
+		return dateExpiration;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
-		this.dateNaissance = dateNaissance;
+	public void setDateNaissance(Date dateExpiration) {
+		this.dateExpiration = dateExpiration;
 	}
 
 }

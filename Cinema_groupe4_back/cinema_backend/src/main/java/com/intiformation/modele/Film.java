@@ -17,6 +17,7 @@ public class Film {
 
 	@Id
 	private int visaExploitation;
+
 	private String titre;
 	private Time duree;
 	private String realisateur;
@@ -62,7 +63,6 @@ public class Film {
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
-
 
 	public Time getDuree() {
 		return duree;

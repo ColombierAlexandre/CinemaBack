@@ -16,12 +16,12 @@ public class Film {
 
 	@Id
 	private int visaExploitation;
-	private String titre;
-	private String synopsis;
-	private Time duree;
-	private String realisateur;
-	private String producteur;
-	private List<String> acteurs;
+	private String titre;	
+	private String synopsis;		
+	private Time duree;		//
+	private String realisateur;		//
+	private String producteur;		//
+	private List<String> acteurs;		//
 	private Date dateDeSortie;
 	private String afficheUrl;
 	@ManyToMany(cascade = CascadeType.ALL)

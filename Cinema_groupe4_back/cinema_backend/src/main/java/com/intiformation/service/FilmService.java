@@ -1,9 +1,12 @@
 package com.intiformation.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.intiformation.dao.FilmRepository;
@@ -35,9 +38,9 @@ public class FilmService {
 		}
 		return film;
 	}
-
+	
 	public List<Film> getALlFilm() {
-		return filmRepository.findAll();
+		return filmRepository.findAll(Sort.by(Direction.DESC, "dateDeSortie"));
 	}
 
 	public Film getFilmByTitre(String titre) {

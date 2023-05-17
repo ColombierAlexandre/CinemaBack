@@ -10,7 +10,6 @@ public class SalleBo {
 	private Cinema cinema;
 	
 	public SalleBo() {
-
 	}
 
 	public SalleBo(int numero, int nombreDePlaces, Cinema cinema) {

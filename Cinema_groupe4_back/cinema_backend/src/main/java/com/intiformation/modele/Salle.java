@@ -16,7 +16,7 @@ public class Salle {
 	private int numero;
 	private int nombreDePlaces;
 	@ManyToOne
-	@JoinColumn(name = "cinema", referencedColumnName = "idCinema")
+	@JoinColumn(name = "idCinema", referencedColumnName = "idCinema")
 	private Cinema cinema;
 
 	public Salle() {

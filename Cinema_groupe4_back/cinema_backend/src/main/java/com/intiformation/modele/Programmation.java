@@ -39,6 +39,16 @@ public class Programmation {
 		this.film = film;
 		this.salle = salle;
 	}
+	
+	
+
+	public Programmation(long idProgrammation, Date dateHeureProg, Film film, Salle salle) {
+		super();
+		this.idProgrammation = idProgrammation;
+		this.dateHeureProg = dateHeureProg;
+		this.film = film;
+		this.salle = salle;
+	}
 
 	public long getIdProgrammation() {
 		return idProgrammation;

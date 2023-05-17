@@ -18,8 +18,6 @@ import com.intiformation.modele.Film;
 import com.intiformation.modele.Programmation;
 import com.intiformation.service.ProgrammationService;
 
-import jakarta.websocket.server.PathParam;
-
 @RestController
 @RequestMapping("programmationBo_api")
 @CrossOrigin("http://localhost:4200")
@@ -52,4 +50,15 @@ public class ProgrammationControllerBo {
 		}
 		return listeProgrammationBo;
 	}
+	
+	@GetMapping("/getAll")
+	public List<ProgrammationBo> getAllProgrammationBo() {
+		List<ProgrammationBo> listeProgrammationBo = new ArrayList<>();
+		for (Programmation programmation : programmationService.getAllProgrammation()) {
+			listeProgrammationBo.add(programmationMapper.programmationToProgrammationBo(programmation));
+		}
+		return listeProgrammationBo;
+	}
+	
+	
 }

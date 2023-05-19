@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.intiformation.dao.ProgrammationRepository;
+import com.intiformation.modele.Cinema;
 import com.intiformation.modele.Film;
 import com.intiformation.modele.Programmation;
 
@@ -42,6 +43,10 @@ public class ProgrammationService {
 	
 	public List<Programmation> getAllProgrammationByFilm(Film film){
 		return programmationRepository.findAllByFilm(film);
+	}
+	
+	public List<Programmation> getAllProgrammationByFilmAndCinema(Film film, Cinema cinema){
+		return programmationRepository.findAllByFilmAndCinema(film, cinema);
 	}
 
 }

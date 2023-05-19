@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.intiformation.businessObject.ProgrammationBo;
 import com.intiformation.mapper.ProgrammationMapper;
+import com.intiformation.modele.Cinema;
 import com.intiformation.modele.Film;
 import com.intiformation.modele.Programmation;
 import com.intiformation.service.ProgrammationService;
-
-import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping("programmationBo_api")
@@ -26,7 +25,6 @@ public class ProgrammationControllerBo {
 
 	@Autowired
 	ProgrammationService programmationService;
-	@Autowired
 	ProgrammationMapper programmationMapper;
 
 	@GetMapping("/{id}")
@@ -43,4 +41,24 @@ public class ProgrammationControllerBo {
 		}
 		return listeProgrammationBo;
 	}
+	
+	@GetMapping("/getAllByFilmCine")
+	public List<ProgrammationBo> getAllProgrammationByFilmAndCinema(@RequestBody Film film,@RequestBody Cinema cinema) {
+		List<ProgrammationBo> listeProgrammationBo = new ArrayList<>();
+		for (Programmation programmation : programmationService.getAllProgrammationByFilmAndCinema(film, cinema)) {
+			listeProgrammationBo.add(programmationMapper.programmationToProgrammationBo(programmation));
+		}
+		return listeProgrammationBo;
+	}
+	
+	@GetMapping("/getAll")
+	public List<ProgrammationBo> getAllProgrammationBo() {
+		List<ProgrammationBo> listeProgrammationBo = new ArrayList<>();
+		for (Programmation programmation : programmationService.getAllProgrammation()) {
+			listeProgrammationBo.add(programmationMapper.programmationToProgrammationBo(programmation));
+		}
+		return listeProgrammationBo;
+	}
+	
+	
 }

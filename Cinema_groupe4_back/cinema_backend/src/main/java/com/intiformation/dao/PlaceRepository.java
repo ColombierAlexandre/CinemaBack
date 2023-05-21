@@ -8,11 +8,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.intiformation.modele.Place;
+import com.intiformation.modele.Programmation;
 
 @Repository
 public interface PlaceRepository extends JpaRepository<Place, Long> {
 
 	@Query("SELECT p FROM Place p WHERE p.programmation = :progParam")
-	List<Place> getAllPlaceForShow(@Param("progParam") Long idProg);
+	List<Place> getAllPlaceForShow(@Param("progParam") Programmation programmation);
 
 }

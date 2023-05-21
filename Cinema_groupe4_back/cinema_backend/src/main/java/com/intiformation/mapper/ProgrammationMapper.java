@@ -36,7 +36,7 @@ public class ProgrammationMapper {
 		programmationBo.setDateHeureProg(programmation.getDateHeureProg());
 		programmationBo.setFilm(programmation.getFilm());
 		programmationBo.setSalle(programmation.getSalle());
-		programmationBo.setListePlaces(placeService.getAllPlaceForShow(programmation.getIdProgrammation()));
+		programmationBo.setListePlaces(placeService.getAllPlaceForShow(programmation));
 		return programmationBo;
 	}
 

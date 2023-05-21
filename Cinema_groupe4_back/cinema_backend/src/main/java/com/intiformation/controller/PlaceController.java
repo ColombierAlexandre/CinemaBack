@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiformation.modele.Place;
+import com.intiformation.modele.Programmation;
 import com.intiformation.service.PlaceService;
 
 @RestController
@@ -49,9 +50,9 @@ public class PlaceController {
 		return placeService.getAllPlace();
 	}
 	
-	@GetMapping("/getAll")
-	public List<Place> getAllPlaceForShow(Long idProg) {
-		return placeService.getAllPlaceForShow(idProg);
+	@GetMapping("/getAllProgForShow")
+	public List<Place> getAllPlaceForShow(@RequestBody Programmation programmation) {
+		return placeService.getAllPlaceForShow(programmation);
 	}
 
 }

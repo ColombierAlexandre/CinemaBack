@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.intiformation.dao.PlaceRepository;
 import com.intiformation.modele.Place;
+import com.intiformation.modele.Programmation;
 
 @Service
 public class PlaceService {
@@ -39,8 +40,8 @@ public class PlaceService {
 		return placeRepository.findAll();
 	}
 
-	public List<Place> getAllPlaceForShow(Long idProg) {
-		return placeRepository.getAllPlaceForShow(idProg);
+	public List<Place> getAllPlaceForShow(Programmation programmation) {
+		return placeRepository.getAllPlaceForShow(programmation);
 	}
 
 }

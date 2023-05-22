@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiformation.businessObject.PlaceBo;
 import com.intiformation.mapper.PlaceMapper;
 import com.intiformation.modele.Place;
+import com.intiformation.modele.Programmation;
 import com.intiformation.service.PlaceService;
 
 @RestController
@@ -38,10 +40,10 @@ public class PlaceControllerBo {
 		return listePlaceBo;
 	}
 	
-	@GetMapping("/allProg/{id}")
-	public List<PlaceBo> getAllPlaceByProgrammation(@PathVariable("id") Long idProg) {
+	@GetMapping("/allProg")
+	public List<PlaceBo> getAllPlaceByProgrammation(@RequestBody Programmation programmation) {
 		List<PlaceBo> listePlaceBo = new ArrayList<>();
-		for(Place place : placeService.getAllPlaceForShow(idProg)) {
+		for(Place place : placeService.getAllPlaceForShow(programmation)) {
 			listePlaceBo.add(placeMapper.placeToPlaceBo(place));
 		}		
 		return listePlaceBo;

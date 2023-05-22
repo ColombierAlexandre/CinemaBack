@@ -50,7 +50,7 @@ public class PlaceController {
 		return placeService.getAllPlace();
 	}
 	
-	@GetMapping("/getAllProgForShow")
+	@PostMapping("/getAllProgForShow")
 	public List<Place> getAllPlaceForShow(@RequestBody Programmation programmation) {
 		return placeService.getAllPlaceForShow(programmation);
 	}
